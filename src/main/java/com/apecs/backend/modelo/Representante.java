@@ -11,12 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.lang.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "representante")
 public class Representante implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -24,15 +28,11 @@ public class Representante implements Serializable {
 	@Column(nullable = false)
 	private String parentezco;
 
-	// @NotNull
+	@NonNull
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Persona persona;
 
-	// @NotNull
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Alumno alumno;
 
 	public Representante() {
 		super();
@@ -60,14 +60,6 @@ public class Representante implements Serializable {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
-	}
-
-	public Alumno getAlumno() {
-		return alumno;
-	}
-
-	public void setAlumno(Alumno alumno) {
-		this.alumno = alumno;
 	}
 
 	public static long getSerialversionuid() {

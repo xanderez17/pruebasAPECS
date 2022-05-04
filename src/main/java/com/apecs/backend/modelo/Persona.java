@@ -19,10 +19,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @Table(name = "persona")
 public class Persona implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(nullable = false)
 	private String identificacion;
 
@@ -49,8 +52,12 @@ public class Persona implements Serializable {
 
 	@Column(nullable = false)
 	private String correo;
+	
 	@Column(nullable = false)
 	private String telefono;
+	
+	@Column(nullable = false)
+	private String sexo;
 
 	public Persona() {
 	}
@@ -133,6 +140,15 @@ public class Persona implements Serializable {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+	
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
 	public static long getSerialversionuid() {
