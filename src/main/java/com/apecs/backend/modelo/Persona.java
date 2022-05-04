@@ -1,6 +1,5 @@
 package com.apecs.backend.modelo;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,19 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "persona")
-public class Persona implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Persona{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,10 +36,7 @@ public class Persona implements Serializable {
     @Column(nullable = false)
     private String segundo_nombre;
 
-    @JsonFormat(pattern="yyyy-MM-dd",timezone = "America/Guayaquil")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(nullable = true)
-    @Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 
 	@Column(nullable = false)
@@ -151,9 +143,8 @@ public class Persona implements Serializable {
 		this.sexo = sexo;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
+
 
 
 
