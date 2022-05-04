@@ -1,6 +1,7 @@
 package com.apecs.backend.modelo;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,66 +9,98 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="persona")
-public class Persona {
-	
+@Table(name = "persona")
+public class Persona implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idPersona;
-	
+	private Long id;
 	@Column(nullable = false)
-	private String nombres;
-	
-	@Column(nullable = false)
-	private String apellidos;
-	
-	@Column(nullable = false)
+	private String identificacion;
+
+    @Column(nullable = false)
+    private String primer_apellido;
+    
+    @Column(nullable = false)
+    private String segundo_apellido;
+    
+    @Column(nullable = false)
+    private String primer_nombre;
+    
+    @Column(nullable = false)
+    private String segundo_nombre;
+
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "America/Guayaquil")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(nullable = true)
+    @Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
-	
+
 	@Column(nullable = false)
 	private String direccion;
-	
+
 	@Column(nullable = false)
 	private String correo;
+	@Column(nullable = false)
+	private String telefono;
 
 	public Persona() {
 	}
 
-	public Persona(Long idPersona, String nombres, String apellidos, Date fechaNacimiento, String direccion,
-			String correo) {
-		super();
-		this.idPersona = idPersona;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.fechaNacimiento = fechaNacimiento;
-		this.direccion = direccion;
-		this.correo = correo;
+	public Long getId() {
+		return id;
 	}
 
-	public Long getIdPersona() {
-		return idPersona;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setIdPersona(Long idPersona) {
-		this.idPersona = idPersona;
+	public String getIdentificacion() {
+		return identificacion;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public void setIdentificacion(String identificacion) {
+		this.identificacion = identificacion;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public String getPrimer_apellido() {
+		return primer_apellido;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	public void setPrimer_apellido(String primer_apellido) {
+		this.primer_apellido = primer_apellido;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public String getSegundo_apellido() {
+		return segundo_apellido;
+	}
+
+	public void setSegundo_apellido(String segundo_apellido) {
+		this.segundo_apellido = segundo_apellido;
+	}
+
+	public String getPrimer_nombre() {
+		return primer_nombre;
+	}
+
+	public void setPrimer_nombre(String primer_nombre) {
+		this.primer_nombre = primer_nombre;
+	}
+
+	public String getSegundo_nombre() {
+		return segundo_nombre;
+	}
+
+	public void setSegundo_nombre(String segundo_nombre) {
+		this.segundo_nombre = segundo_nombre;
 	}
 
 	public Date getFechaNacimiento() {
@@ -93,9 +126,19 @@ public class Persona {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	
-	
-	
-	
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 }

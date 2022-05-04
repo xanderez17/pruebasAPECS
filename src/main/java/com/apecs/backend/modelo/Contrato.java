@@ -1,5 +1,8 @@
 package com.apecs.backend.modelo;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="contrato")
@@ -17,24 +22,29 @@ public class Contrato {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idContrato;
 	
-	private String descripcion;
+	@Column(nullable = false)
+	private String  descripcion;
+	
+	@Column(nullable = false)
+	private Date fechaContrato;
+
+	@Column(nullable = false)
+	private String observacion;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	private Estudiante estudiante;
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Alumno alumno;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Representante representante;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	private Curso curso;
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Curso curso; 
 
 	public Contrato() {
 		
-	}
-
-	public Contrato(Long idContrato, String descripcion, Estudiante estudiante, Curso curso) {
-		super();
-		this.idContrato = idContrato;
-		this.descripcion = descripcion;
-		this.estudiante = estudiante;
-		this.curso = curso;
 	}
 
 	public Long getIdContrato() {
@@ -53,12 +63,36 @@ public class Contrato {
 		this.descripcion = descripcion;
 	}
 
-	public Estudiante getEstudiante() {
-		return estudiante;
+	public Date getFechaContrato() {
+		return fechaContrato;
 	}
 
-	public void setEstudiante(Estudiante estudiante) {
-		this.estudiante = estudiante;
+	public void setFechaContrato(Date fechaContrato) {
+		this.fechaContrato = fechaContrato;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+	public Alumno getAlumno() {
+		return alumno;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+
+	public Representante getRepresentante() {
+		return representante;
+	}
+
+	public void setRepresentante(Representante representante) {
+		this.representante = representante;
 	}
 
 	public Curso getCurso() {
@@ -68,6 +102,7 @@ public class Contrato {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
+	
 	
 	
 }

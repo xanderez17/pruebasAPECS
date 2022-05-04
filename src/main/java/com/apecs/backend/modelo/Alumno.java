@@ -2,6 +2,7 @@ package com.apecs.backend.modelo;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,25 +10,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="docente")
-public class Docente implements Serializable {
+@Table(name = "alumno")
+public class Alumno implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String especialidad;
-	
+
+	@Column(nullable = true)
+	private String ocupacion;
+	@Column(nullable = true)
+	private String cargo;
+
 	//@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Persona persona;
 
-	public Docente() {
-		
+	public Alumno() {
+
 	}
 
 	public Long getId() {
@@ -38,12 +43,20 @@ public class Docente implements Serializable {
 		this.id = id;
 	}
 
-	public String getEspecialidad() {
-		return especialidad;
+	public String getOcupacion() {
+		return ocupacion;
 	}
 
-	public void setEspecialidad(String especialidad) {
-		this.especialidad = especialidad;
+	public void setOcupacion(String ocupacion) {
+		this.ocupacion = ocupacion;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 
 	public Persona getPersona() {
@@ -57,8 +70,7 @@ public class Docente implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	
 
-	
-	
-	
 }
