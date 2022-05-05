@@ -25,16 +25,16 @@ public class Persona{
 	private String identificacion;
 
     @Column(nullable = false)
-    private String primer_apellido;
+    private String apellidoPrimer;
     
     @Column(nullable = false)
-    private String segundo_apellido;
+    private String apellidoSegundo;
     
     @Column(nullable = false)
-    private String primer_nombre;
+    private String nombrePrimer;
     
     @Column(nullable = false)
-    private String segundo_nombre;
+    private String nombreSegundo;
 
     @Column(nullable = true)
 	private Date fechaNacimiento;
@@ -70,36 +70,38 @@ public class Persona{
 		this.identificacion = identificacion;
 	}
 
-	public String getPrimer_apellido() {
-		return primer_apellido;
+	
+
+	public String getApellidoPrimer() {
+		return apellidoPrimer;
 	}
 
-	public void setPrimer_apellido(String primer_apellido) {
-		this.primer_apellido = primer_apellido;
+	public void setApellidoPrimer(String apellidoPrimer) {
+		this.apellidoPrimer = apellidoPrimer;
 	}
 
-	public String getSegundo_apellido() {
-		return segundo_apellido;
+	public String getApellidoSegundo() {
+		return apellidoSegundo;
 	}
 
-	public void setSegundo_apellido(String segundo_apellido) {
-		this.segundo_apellido = segundo_apellido;
+	public void setApellidoSegundo(String apellidoSegundo) {
+		this.apellidoSegundo = apellidoSegundo;
 	}
 
-	public String getPrimer_nombre() {
-		return primer_nombre;
+	public String getNombrePrimer() {
+		return nombrePrimer;
 	}
 
-	public void setPrimer_nombre(String primer_nombre) {
-		this.primer_nombre = primer_nombre;
+	public void setNombrePrimer(String nombrePrimer) {
+		this.nombrePrimer = nombrePrimer;
 	}
 
-	public String getSegundo_nombre() {
-		return segundo_nombre;
+	public String getNombreSegundo() {
+		return nombreSegundo;
 	}
 
-	public void setSegundo_nombre(String segundo_nombre) {
-		this.segundo_nombre = segundo_nombre;
+	public void setNombreSegundo(String nombreSegundo) {
+		this.nombreSegundo = nombreSegundo;
 	}
 
 	public Date getFechaNacimiento() {

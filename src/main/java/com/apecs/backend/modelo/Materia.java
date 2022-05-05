@@ -1,9 +1,12 @@
 package com.apecs.backend.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +21,16 @@ public class Materia {
 	
 	private String contenido;
 
+	@OneToMany(mappedBy = "materia")
+	private List<Curso> curso;
+	
+	
 	public Materia() {
 		super();
 	}
+	
+
+	
 
 	public Long getIdMateria() {
 		return idMateria;
@@ -45,5 +55,12 @@ public class Materia {
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
+	public List<Curso> getCurso() {
+		return curso;
+	}
 
+	public void setCurso(List<Curso> curso) {
+		this.curso = curso;
+	}
+	
 }
