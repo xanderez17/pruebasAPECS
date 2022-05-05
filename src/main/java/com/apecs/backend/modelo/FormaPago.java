@@ -26,9 +26,10 @@ public class FormaPago {
 	@Column(nullable = false)
 	private Double Pago;
 	
+	/*
 	@OneToMany(mappedBy = "formaPago")
 	private List<Contrato> contrato;
-
+	 */
 	public FormaPago() {
 		super();
 	}
@@ -64,7 +65,8 @@ public class FormaPago {
 	public void setPago(Double pago) {
 		Pago = pago;
 	}
-
+	
+	/*
 	public List<Contrato> getContrato() {
 		return contrato;
 	}
@@ -72,6 +74,7 @@ public class FormaPago {
 	public void setContrato(List<Contrato> contrato) {
 		this.contrato = contrato;
 	}
+	*/
 	
 	
 	

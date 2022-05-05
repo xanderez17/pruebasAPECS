@@ -17,14 +17,16 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
 public class Representante extends Persona{
 
-	
+	/*
 	@OneToMany(mappedBy = "representante")
 	private List<Parentezco> listaParentezco;
+	*/
 	
 	public Representante() {
 		super();
 	}
-
+	
+	/*
 	public List<Parentezco> getListaParentezco() {
 		return listaParentezco;
 	}
@@ -32,7 +34,7 @@ public class Representante extends Persona{
 	public void setListaParentezco(List<Parentezco> listaParentezco) {
 		this.listaParentezco = listaParentezco;
 	}
-	
+	*/
 
 	
 }

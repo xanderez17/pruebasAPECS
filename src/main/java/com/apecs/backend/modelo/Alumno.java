@@ -21,9 +21,11 @@ public class Alumno extends Persona{
 	
 	@Column(nullable = true)
 	private String cargo;
-
+	
+	/*
 	@OneToMany(mappedBy = "alumno")
 	private List<Parentezco> listaParentezco;
+	*/
 	
 	public Alumno() {
 
@@ -44,7 +46,8 @@ public class Alumno extends Persona{
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-
+	
+	/*
 	public List<Parentezco> getListaParentezco() {
 		return listaParentezco;
 	}
@@ -52,8 +55,6 @@ public class Alumno extends Persona{
 	public void setListaParentezco(List<Parentezco> listaParentezco) {
 		this.listaParentezco = listaParentezco;
 	}
-
-
-	
+	*/
 
 }

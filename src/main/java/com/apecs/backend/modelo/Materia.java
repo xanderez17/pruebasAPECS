@@ -20,10 +20,11 @@ public class Materia {
 	private String nombre;
 	
 	private String contenido;
-
+	
+	/*
 	@OneToMany(mappedBy = "materia")
 	private List<Curso> curso;
-	
+	*/
 	
 	public Materia() {
 		super();
@@ -55,6 +56,7 @@ public class Materia {
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
+	/*
 	public List<Curso> getCurso() {
 		return curso;
 	}
@@ -62,5 +64,5 @@ public class Materia {
 	public void setCurso(List<Curso> curso) {
 		this.curso = curso;
 	}
-	
+	*/
 }
