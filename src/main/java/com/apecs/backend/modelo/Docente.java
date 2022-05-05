@@ -31,13 +31,12 @@ public class Docente extends Persona{
 	}
 
 	/*
-	 * public List<Curso> getCurso() {
+	 public List<Curso> getCurso() {
 	 
 		return curso;
 	}
 
 	public void setCurso(List<Curso> curso) {
 		this.curso = curso;
-	}
-*/
+	}*/
 }

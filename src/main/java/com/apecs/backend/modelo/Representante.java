@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -15,23 +17,22 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
 public class Representante extends Persona{
 
-	@Column(nullable = false)
-	private String parentezco;
 	
 	@OneToMany(mappedBy = "representante")
-	private List<Alumno> listaAlumnos;
-
+	private List<Parentezco> listaParentezco;
+	
 	public Representante() {
 		super();
 	}
 
-	public String getParentezco() {
-		return parentezco;
+	public List<Parentezco> getListaParentezco() {
+		return listaParentezco;
 	}
 
-	public void setParentezco(String parentezco) {
-		this.parentezco = parentezco;
+	public void setListaParentezco(List<Parentezco> listaParentezco) {
+		this.listaParentezco = listaParentezco;
 	}
+	
 
 	
 }
