@@ -25,10 +25,11 @@ public class Paralelo {
 	@ManyToOne
 	@JoinColumn(name = "idAula")
 	private Aula aula;
-
+	
+	/*
 	@OneToMany(mappedBy = "paralelo")
 	private List<Curso> curso;
-	
+	*/
 	public Paralelo() {
 		super();
 	}
@@ -56,7 +57,8 @@ public class Paralelo {
 	public void setAula(Aula aula) {
 		this.aula = aula;
 	}
-
+	
+	/*
 	public List<Curso> getCurso() {
 		return curso;
 	}
@@ -64,6 +66,6 @@ public class Paralelo {
 	public void setCurso(List<Curso> curso) {
 		this.curso = curso;
 	}
-	
+	*/
 	
 }

@@ -23,10 +23,11 @@ private Long idMatricula;
 	
 	@Column(nullable = false)
 	private Double valorCurso;
-
+	
+	/*
 	@OneToMany(mappedBy = "matricula")
 	private List<Contrato> contrato;
-
+	*/
 	public Matricula() {
 		super();
 	}
@@ -54,15 +55,14 @@ private Long idMatricula;
 	public void setValorCurso(Double valorCurso) {
 		this.valorCurso = valorCurso;
 	}
-
+	/*
 	public List<Contrato> getContrato() {
 		return contrato;
 	}
-
+	
 	public void setContrato(List<Contrato> contrato) {
 		this.contrato = contrato;
 	}
-	
-	
+	*/
 	
 }
