@@ -21,6 +21,10 @@ public class Aula {
 	
 	private int capacidad;
 	
+	private String modalidad;
+	
+	private String ubicacion;
+	
 	@OneToMany(mappedBy = "aula")
 	private List<Paralelo> paralelo;
 
@@ -59,5 +63,20 @@ public class Aula {
 	public void setParalelo(List<Paralelo> paralelo) {
 		this.paralelo = paralelo;
 	}
-	
+
+	public String getModalidad() {
+		return modalidad;
+	}
+
+	public void setModalidad(String modalidad) {
+		this.modalidad = modalidad;
+	}
+
+	public String getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
+	}
 }
