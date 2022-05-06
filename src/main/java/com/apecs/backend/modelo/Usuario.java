@@ -6,34 +6,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "login")
-public class Login {
+@Table(name = "usuario")
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLogin;
+	private Long idUsuario;
 	
 	private String username;
 	
 	private String password;
 	
+	@OneToOne
+	@JoinColumn(name = "id")
+	private Persona persona;
+	
 	@ManyToOne
-	@JoinColumn(name = "idUsuario")
+	@JoinColumn(name = "idRol")
 	private RolUsuario rolUsuario;
 
-	public Login() {
+	public Usuario() {
 		super();
 	}
 
-	public Long getIdLogin() {
-		return idLogin;
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setIdLogin(Long idLogin) {
-		this.idLogin = idLogin;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getUsername() {

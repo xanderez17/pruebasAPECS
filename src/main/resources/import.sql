@@ -24,6 +24,7 @@ INSERT INTO persona( id, apellido_primer, apellido_segundo, correo, direccion, f
 INSERT INTO persona( id, apellido_primer, apellido_segundo, correo, direccion, fecha_nacimiento, identificacion, nombre_primer, nombre_segundo, sexo, telefono) VALUES (2, 'Villa', 'Arpi', 'villa@gmail.com', 'Cuenca', '1998-02-13', '012435689', 'Angel', 'Efrain', 'Masculino', '0983873885');
 INSERT INTO persona( id, apellido_primer, apellido_segundo, correo, direccion, fecha_nacimiento, identificacion, nombre_primer, nombre_segundo, sexo, telefono) VALUES (3, 'Hernandez', 'Vasquez', 'vasquez@gmail.com', 'Cuenca', '1993-02-13', '014789562', 'Kevin', 'Alexander', 'Masculino', '098765431');
 INSERT INTO persona( id, apellido_primer, apellido_segundo, correo, direccion, fecha_nacimiento, identificacion, nombre_primer, nombre_segundo, sexo, telefono) VALUES (4, 'Condo', 'Vasquez', 'vasquez@gmail.com', 'Cuenca', '1998-02-13', '014789562', 'Jefferson', 'Ismael', 'Masculino', '098765431');
+INSERT INTO persona( id, apellido_primer, apellido_segundo, correo, direccion, fecha_nacimiento, identificacion, nombre_primer, nombre_segundo, sexo, telefono) VALUES (5, 'Espinoza', 'Guevara', 'mateo@gmail.com', 'Cuenca', '1998-05-13', '014787562', 'Mateo', 'Sebastian', 'Masculino', '098763431');
 
 INSERT INTO alumno(cargo, ocupacion, id)	VALUES ('Asistente', 'Empleado', 1);
 INSERT INTO alumno(cargo, ocupacion, id)	VALUES ('Estudiante', 'Estudiante', 2);
@@ -55,4 +56,11 @@ INSERT INTO calificacion(id_calificacion, observaciones, valor_calificacion, id_
 
 INSERT INTO certificado(	id_certificado, codigoqr, detalle, estado,id_alumno, idcurso)	VALUES (1, 'aaa', 'bbbbbbb', 'Entregado',1, 1);
 INSERT INTO certificado(	id_certificado, codigoqr, detalle, estado,id_alumno, idcurso)	VALUES (2, 'aaa', 'bbbbbbb', 'Pendiente',2, 1);
+
+INSERT INTO rol(id_rol, rol) VALUES (1, 'Administrador');
+INSERT INTO rol(id_rol, rol) VALUES (2, 'Docente');
+
+INSERT INTO usuario(id_usuario, password, username, id, id_rol) VALUES (1, '1234', 'Admin', 5, 1);
+INSERT INTO usuario(id_usuario, password, username, id, id_rol) VALUES (2, '12345', 'Docente', 3, 2);
+
 

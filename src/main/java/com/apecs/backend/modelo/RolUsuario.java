@@ -13,7 +13,7 @@ public class RolUsuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUsuario;
+	private Long idRol;
 	
 	@Column(nullable = false)
 	private String rol;
@@ -24,12 +24,12 @@ public class RolUsuario {
 		super();
 	}
 
-	public Long getIdUsuario() {
-		return idUsuario;
+	public Long getIdRol() {
+		return idRol;
 	}
 
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setIdRol(Long idUsuario) {
+		this.idRol = idUsuario;
 	}
 
 	public String getRol() {
