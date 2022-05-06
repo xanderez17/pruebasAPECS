@@ -1,6 +1,5 @@
 package com.apecs.backend.modelo;
 
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,19 +13,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "alumno")
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
-public class Alumno extends Persona{
+public class Alumno extends Persona {
 
 	@Column(nullable = true)
 	private String ocupacion;
-	
+
 	@Column(nullable = true)
 	private String cargo;
-	
-	/*
-	@OneToMany(mappedBy = "alumno")
-	private List<Parentezco> listaParentezco;
-	*/
-	
+
 	public Alumno() {
 
 	}
@@ -46,15 +40,12 @@ public class Alumno extends Persona{
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	
-	/*
-	public List<Parentezco> getListaParentezco() {
-		return listaParentezco;
-	}
 
-	public void setListaParentezco(List<Parentezco> listaParentezco) {
-		this.listaParentezco = listaParentezco;
-	}
-	*/
+	/*
+	 * public List<Parentezco> getListaParentezco() { return listaParentezco; }
+	 * 
+	 * public void setListaParentezco(List<Parentezco> listaParentezco) {
+	 * this.listaParentezco = listaParentezco; }
+	 */
 
 }

@@ -14,28 +14,26 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ticket")
 public class Ticket {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTicket;
 
 	@Column(nullable = false)
 	private Date fechaEmision;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idAlumno")
 	private Alumno Alumno;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idCurso")
 	private Curso curso;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idFormaPago")
 	private FormaPago formaPago;
 
-	
-	
 	public Ticket() {
 		super();
 	}
@@ -79,7 +77,5 @@ public class Ticket {
 	public void setFormaPago(FormaPago formaPago) {
 		this.formaPago = formaPago;
 	}
-	
-	
-	
+
 }

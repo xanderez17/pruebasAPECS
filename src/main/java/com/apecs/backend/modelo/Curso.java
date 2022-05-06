@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cursos")
+@Table(name = "curso")
 public class Curso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +33,10 @@ public class Curso {
 
 	@Column(nullable = false)
 	private int duracion;
-	
+
 	@Column(nullable = false)
 	private String fechaInicio;
-	
+
 	@Column(nullable = false)
 	private String fechaFin;
 
@@ -49,11 +49,10 @@ public class Curso {
 	@Column(nullable = false)
 	private String pdf;
 
-	
 	@ManyToOne
 	@JoinColumn(name = "idMateria")
 	private Materia materia;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idDocente")
 	private Docente docente;
@@ -181,8 +180,5 @@ public class Curso {
 	public void setParalelo(Paralelo paralelo) {
 		this.paralelo = paralelo;
 	}
-	
-	
-	
 
 }

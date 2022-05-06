@@ -19,16 +19,15 @@ public class FormaPago {
 
 	@Column(nullable = false)
 	private String periodoPago;
-	
+
 	@Column(nullable = false)
 	private String tipoPago;
-	
+
 	@Column(nullable = false)
 	private Double Pago;
-	
+
 	/*
-	@OneToMany(mappedBy = "formaPago")
-	private List<Contrato> contrato;
+	 * @OneToMany(mappedBy = "formaPago") private List<Contrato> contrato;
 	 */
 	public FormaPago() {
 		super();
@@ -65,18 +64,12 @@ public class FormaPago {
 	public void setPago(Double pago) {
 		Pago = pago;
 	}
-	
-	/*
-	public List<Contrato> getContrato() {
-		return contrato;
-	}
 
-	public void setContrato(List<Contrato> contrato) {
-		this.contrato = contrato;
-	}
-	*/
-	
-	
-	
-	
+	/*
+	 * public List<Contrato> getContrato() { return contrato; }
+	 * 
+	 * public void setContrato(List<Contrato> contrato) { this.contrato = contrato;
+	 * }
+	 */
+
 }

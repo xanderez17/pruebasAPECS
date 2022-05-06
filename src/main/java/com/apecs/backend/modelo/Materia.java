@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "materias")
+@Table(name = "materia")
 public class Materia {
 	
 	@Id
@@ -21,10 +21,7 @@ public class Materia {
 	
 	private String contenido;
 	
-	/*
-	@OneToMany(mappedBy = "materia")
-	private List<Curso> curso;
-	*/
+
 	
 	public Materia() {
 		super();

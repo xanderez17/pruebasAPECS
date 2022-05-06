@@ -11,26 +11,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "horarios")
+@Table(name = "horario")
 public class Horarios {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idHorario;
-	
+
 	@Column(nullable = false)
 	private String dias;
-	
+
 	@Column(nullable = false)
 	private String horaInicio;
-	
+
 	@Column(nullable = false)
 	private String horaFin;
 
-	
-	@OneToMany(mappedBy = "horario")
-	private List<Curso> curso;
-	
 	public Horarios() {
 		super();
 	}
@@ -66,5 +62,5 @@ public class Horarios {
 	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
 	}
-	
+
 }

@@ -14,59 +14,55 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "parentezco")
 public class Parentezco {
-@Id
-@GeneratedValue(strategy =GenerationType.IDENTITY )
-private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-@Column(nullable = false)
-private String parentezco;
+	@Column(nullable = false)
+	private String parentezco;
 
+	@ManyToOne
+	@JoinColumn(name = "idRepresentante")
+	private Representante representante;
 
-@ManyToOne
-@JoinColumn(name = "idRepresentante")
-private Representante representante;
+	@ManyToOne
+	@JoinColumn(name = "idAlumno")
+	private Alumno alumno;
 
-@ManyToOne
-@JoinColumn(name = "idAlumno")
-private Alumno alumno;
+	public Parentezco() {
+		super();
+	}
 
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-public Parentezco() {
-	super();
-}
+	public String getParentezco() {
+		return parentezco;
+	}
 
-public Long getId() {
-	return id;
-}
+	public void setParentezco(String parentezco) {
+		this.parentezco = parentezco;
+	}
 
-public void setId(Long id) {
-	this.id = id;
-}
+	public Representante getRepresentante() {
+		return representante;
+	}
 
-public String getParentezco() {
-	return parentezco;
-}
+	public void setRepresentante(Representante representante) {
+		this.representante = representante;
+	}
 
-public void setParentezco(String parentezco) {
-	this.parentezco = parentezco;
-}
+	public Alumno getAlumno() {
+		return alumno;
+	}
 
-public Representante getRepresentante() {
-	return representante;
-}
-
-public void setRepresentante(Representante representante) {
-	this.representante = representante;
-}
-
-public Alumno getAlumno() {
-	return alumno;
-}
-
-public void setAlumno(Alumno alumno) {
-	this.alumno = alumno;
-}
-
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
 
 }

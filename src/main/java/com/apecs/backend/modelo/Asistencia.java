@@ -18,10 +18,10 @@ public class Asistencia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAsignatura;
-	
+
 	@Column(nullable = false)
 	private Date fechaAsistencia;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idAlumno")
 	private Alumno Alumno;

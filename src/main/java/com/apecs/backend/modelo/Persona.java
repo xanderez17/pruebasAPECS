@@ -11,32 +11,31 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "persona")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Persona{
-	
+public class Persona {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	private String identificacion;
 
-    @Column(nullable = false)
-    private String apellidoPrimer;
-    
-    @Column(nullable = false)
-    private String apellidoSegundo;
-    
-    @Column(nullable = false)
-    private String nombrePrimer;
-    
-    @Column(nullable = false)
-    private String nombreSegundo;
+	@Column(nullable = false)
+	private String apellidoPrimer;
 
-    @Column(nullable = true)
+	@Column(nullable = false)
+	private String apellidoSegundo;
+
+	@Column(nullable = false)
+	private String nombrePrimer;
+
+	@Column(nullable = false)
+	private String nombreSegundo;
+
+	@Column(nullable = true)
 	private Date fechaNacimiento;
 
 	@Column(nullable = false)
@@ -44,10 +43,10 @@ public class Persona{
 
 	@Column(nullable = false)
 	private String correo;
-	
+
 	@Column(nullable = false)
 	private String telefono;
-	
+
 	@Column(nullable = false)
 	private String sexo;
 
@@ -69,8 +68,6 @@ public class Persona{
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
 	}
-
-	
 
 	public String getApellidoPrimer() {
 		return apellidoPrimer;
@@ -135,7 +132,6 @@ public class Persona{
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
 
 	public String getSexo() {
 		return sexo;
@@ -144,10 +140,5 @@ public class Persona{
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-
-
-
-
-
 
 }

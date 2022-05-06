@@ -2,6 +2,7 @@ package com.apecs.backend.modelo;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,25 +11,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "aulas")
+@Table(name = "aula")
 public class Aula {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAAula;
-	
+
+	@Column(nullable = false)
 	private String nombre;
-	
+
+	@Column(nullable = false)
 	private int capacidad;
-	
+
+	@Column(nullable = false)
 	private String modalidad;
-	
+
+	@Column(nullable = false)
 	private String ubicacion;
-	
-	/*
-	@OneToMany(mappedBy = "aula")
-	private List<Paralelo> paralelo;
-	*/
+
 	public Aula() {
 		super();
 	}
@@ -56,16 +57,13 @@ public class Aula {
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
-	
-	/*
-	public List<Paralelo> getParalelo() {
-		return paralelo;
-	}
 
-	public void setParalelo(List<Paralelo> paralelo) {
-		this.paralelo = paralelo;
-	}
-	*/
+	/*
+	 * public List<Paralelo> getParalelo() { return paralelo; }
+	 * 
+	 * public void setParalelo(List<Paralelo> paralelo) { this.paralelo = paralelo;
+	 * }
+	 */
 
 	public String getModalidad() {
 		return modalidad;

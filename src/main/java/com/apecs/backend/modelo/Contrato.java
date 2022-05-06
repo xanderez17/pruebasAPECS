@@ -15,40 +15,38 @@ import javax.persistence.Table;
 @Table(name = "contrato")
 public class Contrato {
 	@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idContrato;
-	
+
 	@Column(nullable = false)
 	private Date fechaContrato;
-	
+
 	@Column(nullable = false)
 	private String observacion;
-	
+
 	@Column(nullable = false)
 	private String estado;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idAlumno")
 	private Alumno Alumno;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idRepresentante")
 	private Representante representante;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idCurso")
 	private Curso curso;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idFormaPago")
 	private FormaPago formaPago;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idMatricula")
 	private Matricula matricula;
 
-	
-	
 	public Contrato() {
 		super();
 	}
