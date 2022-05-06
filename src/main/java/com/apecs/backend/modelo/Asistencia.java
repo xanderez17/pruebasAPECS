@@ -30,6 +30,7 @@ public class Asistencia {
 	@JoinColumn(name = "idCurso")
 	private Curso curso;
 
+	
 	public Asistencia() {
 		super();
 	}
